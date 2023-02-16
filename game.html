@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Darts Game</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <img src="dartboard.png" alt="dartboard" />
+    </div>
+
+    <script>
+      // create a div element that appears when the wrapper is clicked
+      // define that it appears where the mouse is clicked
+      // add animation of throwing dart
+      // style the dartboard
+      // define a score system or modulate accuracy
+
+      const wrapper = document.querySelector(".wrapper");
+
+      let clickTime;
+
+      const myAsyncFunction = async () => {};
+
+      wrapper.addEventListener("mousedown", (click) => {
+        const timeStart = Date.now();
+      });
+
+      wrapper.addEventListener("click", function (click) {
+        const timeEnd = Date.now();
+        const Y = click.offsetY;
+        const X = click.offsetX;
+        const dart = document.createElement("div");
+        dart.classList.add("dart");
+        dart.style.left = X + "px";
+        dart.style.top = Y + "px";
+        console.log(dart);
+        wrapper.appendChild(dart);
+      });
+    </script>
+  </body>
+</html>
