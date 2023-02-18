@@ -21,25 +21,49 @@
 
       const wrapper = document.querySelector(".wrapper");
 
-      let clickTime;
+      // let clickTime;
 
-      const myAsyncFunction = async () => {};
+      // const myAsyncFunction = async () => {};
 
-      wrapper.addEventListener("mousedown", (click) => {
-        const timeStart = Date.now();
+      // wrapper.addEventListener("mousedown", (click) => {
+      //   const timeStart = Date.now();
+      // });
+
+      // function calculateTime() {
+
+      // wrapper.addEventListener("click", function () {
+      //  let endTime = Date.now();
+      //  let timeDiff = endTime - startTime;
+      //  console.log(timeDiff);
+      // });
+      // }
+
+      // console.log(calculateTime);
+
+      let startTime;
+      let endTime;
+
+      wrapper.addEventListener("mousedown", function (mousedown) {
+        startTime = Date.now();
       });
 
       wrapper.addEventListener("click", function (click) {
-        const timeEnd = Date.now();
+        endTime = Date.now();
+        let clickTime = endTime - startTime;
+        console.log(clickTime);
         const Y = click.offsetY;
         const X = click.offsetX;
         const dart = document.createElement("div");
         dart.classList.add("dart");
-        dart.style.left = X + "px";
+        dart.style.backgroundImage = "url('dart.png')";
+        dart.style.left = X + clickTime / 5 - 200 + "px";
         dart.style.top = Y + "px";
         console.log(dart);
         wrapper.appendChild(dart);
       });
+
+      console.log(startTime);
+      console.log(endTime);
     </script>
   </body>
 </html>

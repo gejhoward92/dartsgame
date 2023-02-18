@@ -5,6 +5,7 @@ body {
     padding: 0;
     display: flex;
     place-content: center;
+    z-index: -1;
 }
 .wrapper {
     width: 500px;
@@ -17,22 +18,42 @@ body {
     margin: 0;
     position: relative;
     overflow: hidden;
+    -webkit-box-shadow: 17px 25px 69px 13px rgba(0,0,0,0.66);
+-moz-box-shadow: 17px 25px 69px 13px rgba(0,0,0,0.66);
+box-shadow: 17px 25px 69px 13px rgba(0,0,0,0.66);
+z-index: 0;
 }
 .dart {
-    width: 15px;
-    height: 15px;
-    background-color: rgb(229, 240, 32);
-    border: 5px dotted rgb(0, 21, 255);
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    background-repeat: no-repeat;
     position: absolute;
     border-radius: 50%;
-    transform: translate( -12px, -12px);
+    transform: rotate(180deg) translate( 10px, 0px);
+    /*transition: width 2s;
+  transition-timing-function: 1.3s cubic-bezier(.08,.7,.62,.96);*/
     animation: boxes 0.7s ;
+    z-index: 1;
 }
+
 @keyframes boxes {
     0%{
-       transform: rotate(270deg) translateX(-200px) translateY(-150px);
+       transform: rotate(30deg) translateX(200px) translateY(-150px);
      }
      20%{
-       border-radius:7px;
+        transform: rotate(60deg) translateX(150px) translateY(-120px);
   }
+  40%{
+    transform: rotate(90deg) translateX(100px) translateY(-90px);
+}
+60%{
+    transform: rotate(120deg) translateX(50px) translateY(-60px);
+}
+80%{
+    transform: rotate(150deg) translateX(0px) translateY(0px);
+}
+100%{
+    transform: rotate(180deg) translateX(0px) translateY(0px);
+}
 }
